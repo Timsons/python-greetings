@@ -56,6 +56,8 @@ def deploy(String environment){
     sh "docker compose stop greetings-app-${environment.toLowerCase()}"
     echo "Removing docker service..."
     sh "docker compose rm -sf greetings-app-${environment.toLowerCase()}"
+    //fails for me on up step, I can try the down command...
+    sh "docker compose down greetings-app-${environment.toLowerCase()}"
     echo "Creating docker service..."
     sh "docker compose up -d greetings-app-${environment.toLowerCase()}"
 }
