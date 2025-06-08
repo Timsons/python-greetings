@@ -53,11 +53,11 @@ def deploy(String environment){
     echo "Pulling the latest version of Python app from dockerhub..."
     sh "docker pull tsnetkovs/python-greetings-app:latest"
     echo "Stopping docker service..."
-    sh "docker compose -f docker-compose.yml stop greetings-app-${environment.toLowerCase()}"
+    sh "docker compose stop greetings-app-${environment.toLowerCase()}"
     echo "Removing docker service..."
-    sh "docker compose -f docker-compose.yml rm -sf greetings-app-${environment.toLowerCase()}"
+    sh "docker compose rm -sf greetings-app-${environment.toLowerCase()}"
     echo "Creating docker service..."
-    sh "docker compose -f docker-compose.yml up -d greetings-app-${environment.toLowerCase()}"
+    sh "docker compose up -d greetings-app-${environment.toLowerCase()}"
 }
 
 def test(String environment){
