@@ -55,7 +55,7 @@ def deploy(String environment){
     echo "Stopping docker service..."
     sh "docker compose stop greetings-app-${environment.toLowerCase()}"
     echo "Removing docker service..."
-    sh "docker compose rm greetings-app-${environment.toLowerCase()}"
+    sh "docker compose rm -sf greetings-app-${environment.toLowerCase()}"
     echo "Creating docker service..."
     sh "docker compose up -d greetings-app-${environment.toLowerCase()}"
 }
