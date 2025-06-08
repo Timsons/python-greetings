@@ -1,18 +1,15 @@
 services:
   greetings-app-dev:
-    build: .
     image: tsnetkovs/python-greetings-app:latest
     container_name: greetings-app-dev
     ports:
       - 7001:3000
   greetings-app-stg:
-    build: .
     image: tsnetkovs/python-greetings-app:latest
     container_name: greetings-app-stg
     ports:
       - 7002:3000
   greetings-app-prd:
-    build: .
     image: tsnetkovs/python-greetings-app:latest
     container_name: greetings-app-prod
     ports:
