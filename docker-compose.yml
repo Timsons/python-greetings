@@ -14,6 +14,6 @@ services:
   greetings-app-prd:
     build: .
     image: tsnetkovs/python-greetings-app:latest
-    container_name: greetings-app-prd
+    container_name: greetings-app-prod
     ports:
       - 7003:3000
